@@ -1,0 +1,25 @@
+{
+  "name": "pugranch",
+  "version": "1.0.0",
+  "description": "Pug Ranch Client Libraries",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-preset-env": "^1.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "css-loader": "^0.27.3",
+    "less": "^2.7.2",
+    "less-loader": "^3.0.0",
+    "style-loader": "^0.14.1"
+  },
+  "scripts": {
+    "test": "webpack"
+  },
+  "author": "Chris Millar",
+  "license": "ISC"
+}

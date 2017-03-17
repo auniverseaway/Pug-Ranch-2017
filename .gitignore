@@ -26,6 +26,9 @@ maven-eclipse.xml
 cq5dam.*
 generated
 
+# Ignore Node Modules
+node_modules
+
 ui.apps/src/main/content/jcr_root/apps/.content.xml
 ui.apps/src/main/content/jcr_root/etc/.content.xml
 ui.apps/src/main/content/jcr_root/etc/msm/.content.xml

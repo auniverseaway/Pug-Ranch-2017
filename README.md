@@ -1,8 +1,19 @@
-# Sample AEM project template
+# AEM Pug Ranch Project
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+This project is designed as a guide to showcase best practices and new techniques for AEM.
 
-## Modules
+# Features you won't find elsewhere
+
+1. ES6 -> Webpack -> Babel -> Clientlib
+2. [BEM](http://getbem.com/introduction/) / [Namespace](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/) based LESS
+3. Stripped down AEM grid system to bare metal parts without the rest of bootstrap
+4. Clientlibs inside apps folder (matches 6.3 We Retail architecture pattern)
+5. Editable Templates
+6. Pug photos
+
+The rest is plain old AEM Archetype 10...
+
+# Modules
 
 The main parts of the template are:
 
@@ -12,7 +23,7 @@ The main parts of the template are:
 * ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
 * ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
 
-## How to build
+# How to build
 
 To build all the modules run in the project root directory the following command with Maven 3:
 
@@ -30,7 +41,7 @@ Or to deploy only the bundle to the author, run
 
     mvn clean install -PautoInstallBundle
 
-## Testing
+# Testing
 
 There are three levels of testing contained in the project:
 
@@ -47,7 +58,7 @@ There are three levels of testing contained in the project:
     in the browser, open the page in 'Developer mode', open the left panel and switch to the 'Tests' tab and find the generated 'MyName Tests' and run them.
 
 
-## Maven settings
+# Maven settings
 
 The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
 

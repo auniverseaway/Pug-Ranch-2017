@@ -1,5 +1,5 @@
 <!--/*
-    Copyright 2015 Adobe Systems Incorporated
+    Copyright 2016 Adobe Systems Incorporated
   
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -13,8 +13,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<meta charset="utf-8" data-sly-use.head="head.js">
-<title>${currentPage.title || currentPage.name}</title>
-<meta name="keywords" content="${head.keywords}"/>
-<meta name="description" content="${properties.jcr:description}"/>
-<link data-sly-test="${head.favIcon}" rel="icon" href="${head.favIcon}"/>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='pugranch.common.publish'}"/>
+
+<!--/* Include Context Hub */-->
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='pugranch.contexthub'}"/>
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

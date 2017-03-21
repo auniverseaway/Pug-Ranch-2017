@@ -15,11 +15,12 @@
 */-->
 <div class="page__main" data-sly-use.main="main.js">
     <header class="page__header">
-        <div class="page__logo" data-sly-resource="logo"></div>
+        <div class="c-logo"></div>
         <nav class="page__topnav" data-sly-resource="topnav"></nav>
     </header>
 
     <div class="page__title" data-sly-resource="${'title' @ decorationTagName='div'}"></div>
+    <div class="page__root" data-sly-resource="root"></div>
     <div class="page__par" data-sly-resource="par"></div>
 
     <footer class="page__footer">

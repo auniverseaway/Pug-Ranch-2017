@@ -2,32 +2,22 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const project = './src/main/content/jcr_root/etc/designs/pugranch';
-const projectSource = project + '/src';
-const projectClientLibs   = project + '/clientlibs';
+const project = './src/main/content/jcr_root/apps/pugranch/clientlibs';
 
 module.exports = {
     entry: {
         'common/publish': [ 
-            projectSource + '/common/publish/js/app.js', 
-            projectSource + '/common/publish/less/app.less' 
+            project + '/common/publish/src/js/app.js', 
+            project + '/common/publish/src/less/app.less' 
         ],
         'common/author': [ 
-            projectSource + '/common/author/js/app.js',
-            projectSource + '/common/author/less/app.less' 
-        ],
-        'dam/publish': [ 
-            projectSource + '/dam/publish/js/app.js', 
-            projectSource + '/dam/publish/less/app.less' 
-        ],
-        'communities/publish': [ 
-            projectSource + '/communities/publish/js/app.js', 
-            projectSource + '/communities/publish/less/app.less' 
+            project + '/common/author/src/js/app.js', 
+            project + '/common/author/src/less/app.less' 
         ]
     },
     output: {
-        path: projectClientLibs,
-        filename: '[name]/js/app.js'
+        path: project,
+        filename: '[name]/dist/js/app.js'
     },
     module: {
         rules: [
@@ -40,9 +30,15 @@ module.exports = {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     use: [{
-                        loader: "css-loader"
+                        loader: "css-loader",
+                        options: {
+                            url: false
+                        }
                     }, {
-                        loader: "less-loader"
+                        loader: "less-loader",
+                        options: {
+                            url: false
+                        }
                     }]
                 })
             }
@@ -51,7 +47,7 @@ module.exports = {
     plugins: [
         // Avoid publishing files when compilation fails
         new webpack.NoEmitOnErrorsPlugin(),
-        new ExtractTextPlugin({ filename: '[name]/css/app.css', disable: false })
+        new ExtractTextPlugin({ filename: '[name]/dist/css/app.css', disable: false })
     ],
     stats: {
         // Nice colored output

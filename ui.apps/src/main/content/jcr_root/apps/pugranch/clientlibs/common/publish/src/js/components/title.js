@@ -1,9 +1,11 @@
 'use strict';
 
-var title = {};
+const test = 'hello from title';
 
-title.helloTitle = function () {
-    console.log('Hello From Title. Demoing For Nate');
-}
+const helloTitle = function () {
+    console.log(test);
+};
+
+const title = { helloTitle };
 
 export { title };

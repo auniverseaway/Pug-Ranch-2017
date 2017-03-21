@@ -97,11 +97,13 @@ console.log('Hello Pug Ranch Common Publish');
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var title = {};
+var test = 'hello from title';
 
-title.helloTitle = function () {
-    console.log('Hello From Title. Demoing For Nate');
+var helloTitle = function helloTitle() {
+    console.log(test);
 };
+
+var title = { helloTitle: helloTitle };
 
 exports.title = title;
 

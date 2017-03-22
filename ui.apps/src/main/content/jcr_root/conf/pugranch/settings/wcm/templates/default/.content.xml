@@ -2,10 +2,10 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2017-03-21T07:19:08.281-06:00"
+        cq:lastModified="{Date}2017-03-22T07:54:19.014-06:00"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/pugranch/settings/wcm/template-types/empty-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Default Page"
+        jcr:title="Default"
         status="enabled"/>
 </jcr:root>

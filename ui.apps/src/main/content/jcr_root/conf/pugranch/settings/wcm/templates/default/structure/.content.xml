@@ -3,27 +3,20 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:lastModified="{Date}2017-03-21T07:19:08.281-06:00"
+        cq:lastModified="{Date}2017-03-21T11:25:40.754-06:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/pugranch/settings/wcm/templates/default-page"
+        cq:template="/conf/pugranch/settings/wcm/templates/default"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="pugranch/components/structure/page">
         <root
+            jcr:lastModified="{Date}2017-03-21T11:00:13.286-06:00"
+            jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid"
-                editable="{Boolean}true">
-                <cq:responsive jcr:primaryType="nt:unstructured">
-                    <tablet
-                        jcr:primaryType="nt:unstructured"
-                        width="12"/>
-                    <default
-                        jcr:primaryType="nt:unstructured"
-                        width="12"/>
-                </cq:responsive>
-            </content>
+                editable="{Boolean}true"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">

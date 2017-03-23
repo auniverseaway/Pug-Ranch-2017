@@ -1,6 +1,7 @@
-const path = require('path');
-const webpack = require('webpack');
+const path              = require('path');
+const webpack           = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin    = require('uglifyjs-webpack-plugin');
 
 const project = './src/main/content/jcr_root/apps/pugranch/clientlibs';
 
@@ -24,7 +25,12 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: ['babel-loader']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
             },
             {
                 test: /\.less$/,
@@ -45,16 +51,13 @@ module.exports = {
         ]
     },
     plugins: [
-        // Avoid publishing files when compilation fails
+        new UglifyJSPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin({ filename: '[name]/dist/css/app.css', disable: false })
     ],
     stats: {
-        // Nice colored output
         colors: true
     },
-    // Create Sourcemaps for the bundle
-    devtool: 'source-map',
-
+    
     watch: true
 };

@@ -1,7 +1,9 @@
 'use strict';
 
-import { title } from './components/title';
+import Title from './components/title';
 
-title.helloTitle();
+const title = new Title();
+
+title.helloThere();
 
 console.log('Hello Pug Ranch Common Publish');

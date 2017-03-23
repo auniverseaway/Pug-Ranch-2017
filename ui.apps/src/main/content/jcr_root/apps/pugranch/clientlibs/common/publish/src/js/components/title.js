@@ -1,11 +1,10 @@
-'use strict';
+export default class Title {
 
-const test = 'hello from title';
+    constructor() {
+        this.hello = 'Hello from title.';
+    }
 
-const helloTitle = function () {
-    console.log(test);
-};
-
-const title = { helloTitle };
-
-export { title };
+    helloThere() {
+        console.log(this.hello);
+    }
+}

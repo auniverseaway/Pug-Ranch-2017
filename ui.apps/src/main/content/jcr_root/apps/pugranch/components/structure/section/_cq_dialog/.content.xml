@@ -31,8 +31,11 @@
                         <items jcr:primaryType="nt:unstructured">
                             <white jcr:primaryType="nt:unstructured" value="#FFFFFF" />
                             <black jcr:primaryType="nt:unstructured" value="#000000" />
-                            <pug-brown jcr:primaryType="nt:unstructured" value="#451A0C" />
-                            <pug-blue jcr:primaryType="nt:unstructured" value="#D8F1FF" />
+                            <hugo-blue jcr:primaryType="nt:unstructured" value="#D8F1FF" />
+                            <hugo-brown jcr:primaryType="nt:unstructured" value="#451A0C" />
+                            <hugo-cream jcr:primaryType="nt:unstructured" value="#F6F6EC" />
+                            <hugo-green jcr:primaryType="nt:unstructured" value="#AECDC7" />
+                            <hugo-gray jcr:primaryType="nt:unstructured" value="#3C3C3C" />
                         </items>
                     </backgroundColor>
                 </items>

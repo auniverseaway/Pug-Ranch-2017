@@ -4,5 +4,6 @@
         <exclude pattern="/apps/pugranch/install" />
     </filter>
     <filter root="/apps/sling" />
+    <filter root="/conf/pugranch" />
     <filter root="/etc/designs/pugranch"/>
 </workspaceFilter>

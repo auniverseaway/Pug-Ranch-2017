@@ -17,7 +17,6 @@
      data-sly-call="${clientlib.css @ categories='pugranch.common.publish'}"/>
 
 <!--/* Include Context Hub */-->
-<sly data-sly-test="${properties.enableContextHub}"
-     data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='pugranch.contexthub'}"/>
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

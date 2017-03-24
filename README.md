@@ -5,11 +5,12 @@ This project is designed as a guide to showcase best practices and new technique
 # Features you won't find elsewhere
 
 1. ES6 + Webpack + Babel = Clientlib
-2. [BEM](http://getbem.com/introduction/) / [Namespace](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/) based LESS
-3. Stripped down AEM grid system to bare metal parts without the rest of bootstrap
-4. Clientlibs inside apps folder (matches 6.3 We Retail architecture pattern)
-5. Editable Templates
-6. Pug photos
+2. [Hobbes](https://docs.adobe.com/docs/en/aem/6-2/develop/ref/test-api/index.html) Integration Tests
+3. [BEM](http://getbem.com/introduction/) / [Namespace](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/) based LESS
+4. Stripped down AEM grid system to bare metal parts without the rest of bootstrap
+5. Clientlibs inside apps folder (matches 6.3 We Retail architecture pattern)
+6. Editable Templates
+7. Pug photos
 
 The rest is plain old AEM Archetype 10...
 

@@ -14,6 +14,9 @@ module.exports = {
         'common/author': [ 
             project + '/common/author/src/js/app.js', 
             project + '/common/author/src/less/app.less' 
+        ],
+        'tests/hobbes': [ 
+            project + '/tests/hobbes/src/js/app.js'
         ]
     },
     output: {

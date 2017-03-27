@@ -1,18 +1,35 @@
 {
   "name": "pugranch",
   "version": "1.0.0",
-  "description": "Pug Ranch Client Libraries",
+  "description": "AEM Pug Ranch Project Client Libraries",
   "main": "webpack.config.js",
-  "dependencies": {
-    "babel-preset-env": "^1.2.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auniverseaway/Pug-Ranch.git"
   },
+  "keywords": [
+    "aem",
+    "sling"
+  ],
+  "author": {
+    "name": "Chris Millar",
+    "url": "https://twitter.com/auniverseaway"
+  },
+  "contributors": [
+    {
+      "name": "Chris Millar",
+      "url": "https://twitter.com/auniverseaway"
+    }
+  ],
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "7.0.0-beta.1",
     "babel-preset-env": "^1.2.2",
     "css-loader": "^0.27.3",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-loader": "^1.7.0",
+    "eslint-plugin-import": "^2.2.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "less": "^2.7.2",
     "less-loader": "^3.0.0",
@@ -23,6 +40,6 @@
   "scripts": {
     "test": "webpack"
   },
-  "author": "Chris Millar",
-  "license": "ISC"
+  "license": "ISC",
+  "readme": "Sup!"
 }

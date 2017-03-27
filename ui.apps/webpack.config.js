@@ -36,6 +36,14 @@ module.exports = {
                 }
             },
             {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: "eslint-loader",
+                options: {
+                    failOnError: true,
+                }
+            },
+            {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     use: [{
@@ -54,7 +62,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new UglifyJSPlugin(),
+        //new UglifyJSPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin({ filename: '[name]/dist/css/app.css', disable: false })
     ],

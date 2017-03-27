@@ -1,3 +1,6 @@
-'use strict';
+/* global document, $ */
+import initMultifield from './components/multifield';
 
-console.log('Hello Pug Ranch Common Author');
+$(document).on('dialog-ready', () => {
+    initMultifield();
+});

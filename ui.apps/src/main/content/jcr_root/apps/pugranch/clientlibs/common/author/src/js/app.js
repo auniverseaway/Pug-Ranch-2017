@@ -1,6 +1,10 @@
 /* global document, $ */
-import initMultifield from './components/multifield';
+import { initMultifield, saveMultifield } from './components/multifield';
 
 $(document).on('dialog-ready', () => {
     initMultifield();
+});
+
+$(document).on('click', '.cq-dialog-submit', (event) => {
+    saveMultifield(event);
 });

@@ -28,6 +28,7 @@ generated
 
 # Ignore Node Modules
 node_modules
+node
 
 ui.apps/src/main/content/jcr_root/apps/.content.xml
 ui.apps/src/main/content/jcr_root/etc/.content.xml

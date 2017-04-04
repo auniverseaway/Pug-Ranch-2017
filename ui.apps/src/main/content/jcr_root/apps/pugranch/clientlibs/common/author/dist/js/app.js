@@ -75,13 +75,14 @@
 
 var _multifield = __webpack_require__(5);
 
-var _multifield2 = _interopRequireDefault(_multifield);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 $(document).on('dialog-ready', function () {
-    (0, _multifield2.default)();
+    (0, _multifield.initMultifield)();
 }); /* global document, $ */
+
+
+$(document).on('click', '.cq-dialog-submit', function (event) {
+    (0, _multifield.saveMultifield)(event);
+});
 
 /***/ }),
 /* 1 */,
@@ -102,9 +103,12 @@ $(document).on('dialog-ready', function () {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = initMultifield;
+exports.initMultifield = initMultifield;
+exports.saveMultifield = saveMultifield;
 /* global document, $, _ */
 var DATA_MULTIFIELD_NAME = 'data-multifield-name';
+var CORAL_FORM_FIELD_WRAPPER_CLASS = '.coral-Form-fieldwrapper';
+var CORAL_FORM_FIELD_SET_CLASS = '.coral-Form-fieldset';
 
 function getMultiFieldNames($multifields) {
     var mNames = {};
@@ -121,30 +125,51 @@ function getMultiFieldNames($multifields) {
     return mNames;
 }
 
-function buildMultiField(data, $multifield, mName) {
-    if (_.isEmpty(mName) || _.isEmpty(data)) {
+/**
+ * Build the multifield entries and inputs.
+ * @param  {Object} multifieldData The Multifield Data
+ * @param  {Object} $multifield    The Multifield DOM object
+ * @param  {String} multifieldName The Multifield Name
+ * @return {Void}
+ */
+function buildMultiField(multifieldData, $multifield, multifieldName) {
+    // Don't do anything if our name or data are empty
+    if (multifieldName === '' || Object.keys(multifieldData).length === 0) {
         return;
     }
 
-    _.each(data, function (value, key) {
+    // Iterate through our multifield.
+    var multifieldDataArray = Object.keys(multifieldData);
+    multifieldDataArray.forEach(function (key) {
         if (key === 'jcr:primaryType') {
             return;
         }
 
+        // Click our button to add a new multi-field entry.
         $multifield.find('.js-coral-Multifield-add').click();
 
-        _.each(value, function (fValue, fKey) {
-            if (fKey === 'jcr:primaryType') {
+        // Find the fieldset to populate our inputs.
+        var $fieldSet = $multifield.find(CORAL_FORM_FIELD_SET_CLASS).last();
+
+        // Get our individual multifield entry
+        var multiFieldEntry = multifieldData[key];
+        var multiFieldEntryArray = Object.keys(multiFieldEntry);
+
+        // Iterate through each input of our entry
+        multiFieldEntryArray.forEach(function (name) {
+            if (name === 'jcr:primaryType') {
                 return;
             }
 
-            var $field = $multifield.find('[name=\'./' + fKey + '\']').last();
+            // Get our input value
+            var inputValue = multiFieldEntry[name];
 
-            if (_.isEmpty($field)) {
-                return;
+            // Get our input DOM object
+            var $field = $fieldSet.find('[name=\'./' + name + '\']');
+
+            if ($field.legth !== 0) {
+                $field.val(inputValue);
             }
-
-            $field.val(fValue);
         });
     });
 }
@@ -153,6 +178,24 @@ function postProcess(mNames, $multifields, data) {
     _.each(mNames, function ($multifield, mName) {
         buildMultiField(data[mName], $multifield, mName);
     });
+}
+
+function fillValue($form, fieldSetName, $field, counter) {
+    var name = $field.attr('name');
+
+    if (!name) {
+        return;
+    }
+
+    // Strip './'
+    if (name.indexOf('./') === 0) {
+        name = name.substring(2);
+    }
+
+    // Remove the field, so that individual values are not POSTed
+    $field.remove();
+
+    $('<input />').attr('type', 'hidden').attr('name', fieldSetName + '/' + counter + '/' + name).attr('value', $field.val()).appendTo($form);
 }
 
 function initMultifield() {
@@ -168,6 +211,28 @@ function initMultifield() {
 
     $.ajax(actionUrl).done(function (data) {
         postProcess(mNames, $multifields, data);
+    });
+}
+
+function saveMultifield(event) {
+    var $multifields = $('[' + DATA_MULTIFIELD_NAME + ']');
+
+    if (_.isEmpty($multifields)) {
+        return;
+    }
+
+    var $form = $(event.target).closest('form.foundation-form');
+
+    $multifields.each(function (i, multifield) {
+        var $fieldSets = $(multifield).find(CORAL_FORM_FIELD_SET_CLASS);
+
+        $fieldSets.each(function (counter, fieldSet) {
+            var $fields = $(fieldSet).children().children([CORAL_FORM_FIELD_WRAPPER_CLASS, '.coral-ColorInput']);
+
+            $fields.each(function (j, field) {
+                fillValue($form, $(fieldSet).data('name'), $(field).find('[name]'), counter + 1);
+            });
+        });
     });
 }
 

@@ -38,13 +38,18 @@
                                             fieldDescription="Enter the.client.lib.name."
                                             fieldLabel="Name"
                                             name="./clientlibName"/>
+                                        <clientlibName
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                            fieldDescription="Enter the.client.lib.name."
+                                            fieldLabel="Name"
+                                            name="./clientlibName"/>
                                         <clientlibType
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                             fieldDescription="The type of the clientlib."
                                             fieldLabel="Type"
-                                            name="./clientlibType"
-                                            value="all">
+                                            name="./clientlibType">
                                             <items jcr:primaryType="nt:unstructured">
                                                 <all
                                                     jcr:primaryType="nt:unstructured"

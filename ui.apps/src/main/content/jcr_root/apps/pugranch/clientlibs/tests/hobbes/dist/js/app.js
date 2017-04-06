@@ -63,10 +63,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
+
+/***/ }),
 
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
@@ -76,14 +84,6 @@
 
 /* global hobs */
 new hobs.TestSuite('Milson Pug Ranch Tests', { path: '/apps/pugranch/tests/SampleTests.js', register: true }).addTestCase(new hobs.TestCase('Logo on Style Guide').navigateTo('/content/pugranch/style-guide.html').asserts.location('/content/pugranch/style-guide.html', true).asserts.visible('.c-logo', true));
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(2);
-
 
 /***/ })
 

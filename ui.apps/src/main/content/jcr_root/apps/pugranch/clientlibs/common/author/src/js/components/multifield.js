@@ -27,7 +27,7 @@ function getMultiFieldNames($multifields) {
  */
 function buildMultiField(multifieldData, $multifield, multifieldName) {
     // Don't do anything if our name or data are empty
-    if (multifieldName === '' || Object.keys(multifieldData).length === 0) {
+    if (multifieldName === '' || typeof multifieldData === 'undefined') {
         return;
     }
 

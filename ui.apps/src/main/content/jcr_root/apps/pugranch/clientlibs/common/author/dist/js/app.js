@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,16 +73,13 @@
 "use strict";
 
 
-var _multifield = __webpack_require__(5);
+var _dialog = __webpack_require__(5);
 
-$(document).on('dialog-ready', function () {
-    (0, _multifield.initMultifield)();
-}); /* global document, $ */
+var _dialog2 = _interopRequireDefault(_dialog);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-$(document).on('click', '.cq-dialog-submit', function (event) {
-    (0, _multifield.saveMultifield)(event);
-});
+(0, _dialog2.default)();
 
 /***/ }),
 /* 1 */,
@@ -95,6 +92,30 @@ $(document).on('click', '.cq-dialog-submit', function (event) {
 /***/ }),
 /* 4 */,
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _multifield = __webpack_require__(6);
+
+var initDialog = function initDialog() {
+    $(document).on('dialog-ready', function () {
+        (0, _multifield.initMultifield)();
+    });
+
+    $(document).on('click', '.cq-dialog-submit', function (event) {
+        (0, _multifield.saveMultifield)(event);
+    });
+}; /* global document, $ */
+exports.default = initDialog;
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -134,7 +155,7 @@ function getMultiFieldNames($multifields) {
  */
 function buildMultiField(multifieldData, $multifield, multifieldName) {
     // Don't do anything if our name or data are empty
-    if (multifieldName === '' || Object.keys(multifieldData).length === 0) {
+    if (multifieldName === '' || typeof multifieldData === 'undefined') {
         return;
     }
 
@@ -237,8 +258,8 @@ function saveMultifield(event) {
 }
 
 /***/ }),
-/* 6 */,
-/* 7 */
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(0);

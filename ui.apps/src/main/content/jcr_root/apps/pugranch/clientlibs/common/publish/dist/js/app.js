@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,7 +74,7 @@
 "use strict";
 
 
-var _title = __webpack_require__(6);
+var _title = __webpack_require__(7);
 
 var _title2 = _interopRequireDefault(_title);
 
@@ -96,7 +96,8 @@ console.log('Hello Pug Ranch Common Publish');
 
 /***/ }),
 /* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,8 +131,8 @@ var Title = function () {
 exports.default = Title;
 
 /***/ }),
-/* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
